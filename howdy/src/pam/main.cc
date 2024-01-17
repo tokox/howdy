@@ -165,8 +165,8 @@ auto check_enabled(const INIReader &config, const char* username) -> int {
       syslog(LOG_ERR, "Error parsing 'dark_hours' from config: incorrect value");
       return PAM_SYSTEM_ERR;
     }
-    int dark_start = std::stoi(dark_hours_match[1].str())*60+std::stoi(dark_hours_match[2].str()),
-	dark_end = std::stoi(dark_hours_match[3].str())*60+std::stoi(dark_hours_match[4].str());
+    int dark_start = std::stoi(dark_hours_match[1].str())*60+std::stoi(dark_hours_match[2].str());
+    int dark_end = std::stoi(dark_hours_match[3].str())*60+std::stoi(dark_hours_match[4].str());
 
     // Get local hour and minute
     time_t timenowseconds = time(nullptr);
