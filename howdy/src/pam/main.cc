@@ -176,7 +176,7 @@ auto check_enabled(const INIReader &config, const char* username) -> int {
 
     // Stop if dark hour
     if ((dark_start <= dark_end && dark_start <= local_minutes && local_minutes <= dark_end)
-    || (dark_start > dark_end && (dark_start <= local_minutes || local_minutes <= dark_end)) {
+    || (dark_start > dark_end && (dark_start <= local_minutes || local_minutes <= dark_end))) {
       syslog(LOG_INFO, "Skipped authentication, dark hour");
       return PAM_AUTHINFO_UNAVAIL;
     }
